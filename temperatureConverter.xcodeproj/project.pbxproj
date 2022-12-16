@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2252F20294BC759002D4EAD /* ConverterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F1F294BC759002D4EAD /* ConverterButton.swift */; };
+		E2252F22294BCF6F002D4EAD /* CtoFVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F21294BCF6F002D4EAD /* CtoFVC.swift */; };
 		E22A2861294BB91900EF4346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22A2860294BB91900EF4346 /* AppDelegate.swift */; };
 		E22A2863294BB91900EF4346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22A2862294BB91900EF4346 /* SceneDelegate.swift */; };
 		E22A286A294BB91C00EF4346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22A2869294BB91C00EF4346 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2252F1F294BC759002D4EAD /* ConverterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterButton.swift; sourceTree = "<group>"; };
+		E2252F21294BCF6F002D4EAD /* CtoFVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtoFVC.swift; sourceTree = "<group>"; };
 		E22A285D294BB91900EF4346 /* temperatureConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temperatureConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22A2860294BB91900EF4346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E22A2862294BB91900EF4346 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				E22A2860294BB91900EF4346 /* AppDelegate.swift */,
 				E22A2862294BB91900EF4346 /* SceneDelegate.swift */,
 				E22A2874294BB9EA00EF4346 /* TemperatureVC.swift */,
+				E2252F1F294BC759002D4EAD /* ConverterButton.swift */,
+				E2252F21294BCF6F002D4EAD /* CtoFVC.swift */,
 				E22A2869294BB91C00EF4346 /* Assets.xcassets */,
 				E22A286B294BB91C00EF4346 /* LaunchScreen.storyboard */,
 				E22A286E294BB91C00EF4346 /* Info.plist */,
@@ -134,6 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2252F20294BC759002D4EAD /* ConverterButton.swift in Sources */,
+				E2252F22294BCF6F002D4EAD /* CtoFVC.swift in Sources */,
 				E22A2875294BB9EA00EF4346 /* TemperatureVC.swift in Sources */,
 				E22A2861294BB91900EF4346 /* AppDelegate.swift in Sources */,
 				E22A2863294BB91900EF4346 /* SceneDelegate.swift in Sources */,
