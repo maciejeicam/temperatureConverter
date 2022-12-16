@@ -1,13 +1,13 @@
 //
-//  ConverterButton.swift
+//  CtoKButton.swift
 //  temperatureConverter
 //
-//  Created by Maciej Michalik on 15/12/2022.
+//  Created by Maciej Michalik on 16/12/2022.
 //
 
 import UIKit
 
-class ConverterButton: UIButton {
+class CtoKButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,5 +29,7 @@ class ConverterButton: UIButton {
         setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
     
 }

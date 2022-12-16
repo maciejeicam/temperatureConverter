@@ -1,17 +1,15 @@
 //
-//  CtoFVC.swift
+//  CtoKVC.swift
 //  temperatureConverter
 //
-//  Created by Maciej Michalik on 15/12/2022.
+//  Created by Maciej Michalik on 16/12/2022.
 //
 
 import UIKit
 
-class CtoFVC: UIViewController {
+class CtoKVC: UIViewController {
     
     var titleLabel = UILabel()
-    let ctoFConvLabel = UILabel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +19,4 @@ class CtoFVC: UIViewController {
     private func setupView(){
         view.backgroundColor = .systemBackground
     }
-    func ctoFConv(){
-        
-    }
-    
 }
