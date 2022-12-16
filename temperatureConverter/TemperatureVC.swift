@@ -13,12 +13,14 @@ class TemperatureVC: UIViewController {
     let convertLabel = CustomeSemiLabel(title: "What You want to convert?")
     let CFButton = CtoFButton(backgroundColor: .systemBlue, title: "ºC --> ºF")
     let CKButton = CtoKButton(backgroundColor: .systemBlue, title: "ºC --> ºK")
+    let FCButton = FtoCButton(backgroundColor: .systemBlue, title: "ºF --> ºC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        addTarget()
-        addSecTarget()
+        addCFTarget()
+        addCKTarget()
+        addFCTarget()
     }
     
     private func setupView(){
@@ -27,13 +29,14 @@ class TemperatureVC: UIViewController {
         configureConverterLabel()
         configureCtoFButton()
         configureCtoKButton()
+        configureFtoCButton()
     }
     
-    @objc func presentConverter(){
+    @objc func CFConverter(){
         let desVC = CtoFVC()
-        desVC.modalTransitionStyle = .flipHorizontal
+        desVC.modalTransitionStyle = .crossDissolve
         desVC.titleLabel.text = ""
-        desVC.view.backgroundColor = .systemGreen
+        desVC.view.backgroundColor = .systemMint
         present(desVC, animated: true)
     }
     
@@ -43,13 +46,23 @@ class TemperatureVC: UIViewController {
         secDesVC.view.backgroundColor = .systemMint
         present(secDesVC, animated: true)
     }
-    
-    func addTarget(){
-        CFButton.addTarget(self, action: #selector(presentConverter), for: .touchUpInside)
+    @objc func FCConverter(){
+        let FCDesVC = FtoCVC()
+        FCDesVC.modalTransitionStyle = .crossDissolve
+        FCDesVC.view.backgroundColor = .systemMint
+        present(FCDesVC, animated: true)
     }
     
-    func addSecTarget(){
+    func addCFTarget(){
+        CFButton.addTarget(self, action: #selector(CFConverter), for: .touchUpInside)
+    }
+    
+    func addCKTarget(){
         CKButton.addTarget(self, action: #selector(CKConverter), for: .touchUpInside)
+    }
+    
+    func addFCTarget(){
+        FCButton.addTarget(self, action: #selector(FCConverter), for: .touchUpInside)
     }
     
     func configureTitleLabel() {
@@ -95,7 +108,18 @@ class TemperatureVC: UIViewController {
             CKButton.heightAnchor.constraint(equalToConstant: 50),
             CKButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             CKButton.topAnchor.constraint(equalTo: CFButton.bottomAnchor, constant: 20)
-            
+        ])
+    }
+    
+    func configureFtoCButton(){
+        view.addSubview(FCButton)
+        FCButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            FCButton.widthAnchor.constraint(equalToConstant: 120),
+            FCButton.heightAnchor.constraint(equalToConstant: 50),
+            FCButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            FCButton.topAnchor.constraint(equalTo: CKButton.bottomAnchor, constant: 20)
         ])
     }
 }
