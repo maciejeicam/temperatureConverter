@@ -11,32 +11,32 @@ class CtoFVC: UIViewController {
     
     var titleLabel = UILabel()
     let rulesCF = UILabel()
-
+    let yourTextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        
+        setupViewCF()
+        yourTextField.keyboardType = .numberPad
     }
     
-    private func setupView(){
+    private func setupViewCF(){
         view.backgroundColor = .systemBackground
-        rulesToConvert()
+        rulesToConvertCF()
     }
     
-    func rulesToConvert(){
+    func rulesToConvertCF(){
         view.addSubview(rulesCF)
+        celciustoFarenthideSubview()
         rulesCF.translatesAutoresizingMaskIntoConstraints = false
-        ctoFSubview()
         
         NSLayoutConstraint.activate([
             rulesCF.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             rulesCF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             rulesCF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        
         ])
-        
     }
-    func ctoFSubview(){
+    
+    func celciustoFarenthideSubview(){
         rulesCF.text = "To convert Celcius to Farenthide write a number"
         rulesCF.textColor = .systemBackground
         rulesCF.font = .systemFont(ofSize: 40, weight: .semibold)
@@ -45,6 +45,3 @@ class CtoFVC: UIViewController {
         rulesCF.numberOfLines = 0
     }
 }
-
-
-
