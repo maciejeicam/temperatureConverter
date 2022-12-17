@@ -10,59 +10,51 @@ import UIKit
 class TemperatureVC: UIViewController {
     
     let titleLabel = CustomeTitleLabel(title: "Temperature Converter")
-    let convertLabel = CustomeSemiLabel(title: "What You want to convert?")
-    let CFButton = CtoFButton(backgroundColor: .systemBlue, title: "ºC --> ºF")
-    let CKButton = CtoKButton(backgroundColor: .systemBlue, title: "ºC --> ºK")
-    let FCButton = FtoCButton(backgroundColor: .systemBlue, title: "ºF --> ºC")
+    let semiLabel = CustomeSemiLabel(title: "What You want to convert?")
+    let celciusToFarenthideButton = CelciusToFarenthideButton(backgroundColor: .systemTeal, title: "ºC --> ºF")
+    let celciusToKelvinButton = CelciusToKelvinButton(backgroundColor: .systemTeal, title: "ºC --> ºK")
+    let farenthideToCelciusButton = FarenthideToCelciusButton(backgroundColor: .systemTeal, title: "ºF --> ºC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        addCFTarget()
-        addCKTarget()
-        addFCTarget()
+        addButtonTarget()
     }
     
     private func setupView(){
         view.backgroundColor = .systemBackground
         configureTitleLabel()
-        configureConverterLabel()
-        configureCtoFButton()
-        configureCtoKButton()
-        configureFtoCButton()
+        configureSemiLabel()
+        configureCelciusToFarenthideButton()
+        configureCelciustoKelvinButton()
+        configureFarenthidetoCelciusButton()
     }
     
-    @objc func CFConverter(){
-        let desVC = CtoFVC()
-        desVC.modalTransitionStyle = .crossDissolve
-        desVC.titleLabel.text = ""
-        desVC.view.backgroundColor = .systemMint
-        present(desVC, animated: true)
+    @objc func celciusToFarenthideConverter(){
+        let celciusToFarenthideDesVC = CelciusToFarenthideVC()
+        celciusToFarenthideDesVC.modalTransitionStyle = .flipHorizontal
+        celciusToFarenthideDesVC.view.backgroundColor = .systemOrange
+        present(celciusToFarenthideDesVC, animated: true)
     }
     
-    @objc func CKConverter(){
-        let secDesVC = CtoKVC()
-        secDesVC.modalTransitionStyle = .crossDissolve
-        secDesVC.view.backgroundColor = .systemMint
-        present(secDesVC, animated: true)
-    }
-    @objc func FCConverter(){
-        let FCDesVC = FtoCVC()
-        FCDesVC.modalTransitionStyle = .crossDissolve
-        FCDesVC.view.backgroundColor = .systemMint
-        present(FCDesVC, animated: true)
+    @objc func celciusToKelvinConverter(){
+        let celciusToKelvinDesVC = CelciusToKelvinVC()
+        celciusToKelvinDesVC.modalTransitionStyle = .flipHorizontal
+        celciusToKelvinDesVC.view.backgroundColor = .systemMint
+        present(celciusToKelvinDesVC, animated: true)
     }
     
-    func addCFTarget(){
-        CFButton.addTarget(self, action: #selector(CFConverter), for: .touchUpInside)
+    @objc func farenthideToCelciusConverter(){
+        let farenthideToCelciusDesVC = FarenthideToCelciusVC()
+        farenthideToCelciusDesVC.modalTransitionStyle = .flipHorizontal
+        farenthideToCelciusDesVC.view.backgroundColor = .systemPurple
+        present(farenthideToCelciusDesVC, animated: true)
     }
     
-    func addCKTarget(){
-        CKButton.addTarget(self, action: #selector(CKConverter), for: .touchUpInside)
-    }
-    
-    func addFCTarget(){
-        FCButton.addTarget(self, action: #selector(FCConverter), for: .touchUpInside)
+    func addButtonTarget(){
+        celciusToFarenthideButton.addTarget(self, action: #selector(celciusToFarenthideConverter), for: .touchUpInside)
+        celciusToKelvinButton.addTarget(self, action: #selector(celciusToKelvinConverter), for: .touchUpInside)
+        farenthideToCelciusButton.addTarget(self, action: #selector(farenthideToCelciusConverter), for: .touchUpInside)
     }
     
     func configureTitleLabel() {
@@ -76,50 +68,50 @@ class TemperatureVC: UIViewController {
         ])
     }
     
-    func configureConverterLabel() {
-        view.addSubview(convertLabel)
-        convertLabel.translatesAutoresizingMaskIntoConstraints = false
+    func configureSemiLabel() {
+        view.addSubview(semiLabel)
+        semiLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            convertLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            convertLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            convertLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            semiLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
+            semiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            semiLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ])
     }
     
-    func configureCtoFButton(){
-        view.addSubview(CFButton)
-        CFButton.translatesAutoresizingMaskIntoConstraints = false
+    func configureCelciusToFarenthideButton(){
+        view.addSubview(celciusToFarenthideButton)
+        celciusToFarenthideButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            CFButton.widthAnchor.constraint(equalToConstant: 120),
-            CFButton.heightAnchor.constraint(equalToConstant: 50),
-            CFButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            CFButton.topAnchor.constraint(equalTo: convertLabel.bottomAnchor, constant: 40)
+            celciusToFarenthideButton.widthAnchor.constraint(equalToConstant: 120),
+            celciusToFarenthideButton.heightAnchor.constraint(equalToConstant: 50),
+            celciusToFarenthideButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            celciusToFarenthideButton.topAnchor.constraint(equalTo: semiLabel.bottomAnchor, constant: 40)
         ])
     }
     
-    func configureCtoKButton(){
-        view.addSubview(CKButton)
-        CKButton.translatesAutoresizingMaskIntoConstraints = false
+    func configureCelciustoKelvinButton(){
+        view.addSubview(celciusToKelvinButton)
+        celciusToKelvinButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            CKButton.widthAnchor.constraint(equalToConstant: 120),
-            CKButton.heightAnchor.constraint(equalToConstant: 50),
-            CKButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            CKButton.topAnchor.constraint(equalTo: CFButton.bottomAnchor, constant: 20)
+            celciusToKelvinButton.widthAnchor.constraint(equalToConstant: 120),
+            celciusToKelvinButton.heightAnchor.constraint(equalToConstant: 50),
+            celciusToKelvinButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            celciusToKelvinButton.topAnchor.constraint(equalTo: celciusToFarenthideButton.bottomAnchor, constant: 20)
         ])
     }
     
-    func configureFtoCButton(){
-        view.addSubview(FCButton)
-        FCButton.translatesAutoresizingMaskIntoConstraints = false
+    func configureFarenthidetoCelciusButton(){
+        view.addSubview(farenthideToCelciusButton)
+        farenthideToCelciusButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            FCButton.widthAnchor.constraint(equalToConstant: 120),
-            FCButton.heightAnchor.constraint(equalToConstant: 50),
-            FCButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            FCButton.topAnchor.constraint(equalTo: CKButton.bottomAnchor, constant: 20)
+            farenthideToCelciusButton.widthAnchor.constraint(equalToConstant: 120),
+            farenthideToCelciusButton.heightAnchor.constraint(equalToConstant: 50),
+            farenthideToCelciusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            farenthideToCelciusButton.topAnchor.constraint(equalTo: celciusToKelvinButton.bottomAnchor, constant: 20)
         ])
     }
 }

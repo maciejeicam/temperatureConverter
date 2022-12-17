@@ -16,11 +16,13 @@ class CustomeTitleLabel: UILabel{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     init(title: String) {
         super.init(frame: .zero)
         text = title
         configure()
     }
+    
     private func configure(){
         font = .systemFont(ofSize: 25, weight: .heavy)
         textAlignment = .center
