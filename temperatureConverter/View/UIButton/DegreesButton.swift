@@ -7,8 +7,7 @@
 
 import UIKit
 
-class CelciusToFarenthideButton: UIButton {
-    
+class DegreesButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,4 +30,5 @@ class CelciusToFarenthideButton: UIButton {
         titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
         setTitleColor(.white, for: .normal)
     }
+    
 }

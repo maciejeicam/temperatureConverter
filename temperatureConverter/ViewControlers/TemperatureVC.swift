@@ -11,9 +11,9 @@ class TemperatureVC: UIViewController {
     
     let titleLabel = CustomeTitleLabel(title: "Temperature Converter")
     let semiLabel = CustomeSemiLabel(title: "What You want to convert?")
-    let celciusToFarenthideButton = CelciusToFarenthideButton(backgroundColor: .systemTeal, title: "ºC --> ºF")
-    let celciusToKelvinButton = CelciusToKelvinButton(backgroundColor: .systemTeal, title: "ºC --> ºK")
-    let farenthideToCelciusButton = FarenthideToCelciusButton(backgroundColor: .systemTeal, title: "ºF --> ºC")
+    let celciusToFarenthideButton = DegreesButton(backgroundColor: .systemTeal, title: "ºC --> ºF")
+    let celciusToKelvinButton = DegreesButton(backgroundColor: .systemTeal, title: "ºC --> ºK")
+    let farenthideToCelciusButton = DegreesButton(backgroundColor: .systemTeal, title: "ºF --> ºC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,21 +33,18 @@ class TemperatureVC: UIViewController {
     @objc func celciusToFarenthideConverter(){
         let celciusToFarenthideDesVC = CelciusToFarenthideVC()
         celciusToFarenthideDesVC.modalTransitionStyle = .flipHorizontal
-        celciusToFarenthideDesVC.view.backgroundColor = .systemOrange
         present(celciusToFarenthideDesVC, animated: true)
     }
     
     @objc func celciusToKelvinConverter(){
         let celciusToKelvinDesVC = CelciusToKelvinVC()
         celciusToKelvinDesVC.modalTransitionStyle = .flipHorizontal
-        celciusToKelvinDesVC.view.backgroundColor = .systemMint
         present(celciusToKelvinDesVC, animated: true)
     }
     
     @objc func farenthideToCelciusConverter(){
         let farenthideToCelciusDesVC = FarenthideToCelciusVC()
         farenthideToCelciusDesVC.modalTransitionStyle = .flipHorizontal
-        farenthideToCelciusDesVC.view.backgroundColor = .systemPurple
         present(farenthideToCelciusDesVC, animated: true)
     }
     
@@ -114,4 +111,5 @@ class TemperatureVC: UIViewController {
             farenthideToCelciusButton.topAnchor.constraint(equalTo: celciusToKelvinButton.bottomAnchor, constant: 20)
         ])
     }
+    
 }
