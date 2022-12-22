@@ -10,9 +10,9 @@ import UIKit
 class CelciusToKelvinVC: UIViewController {
     
     let celciusToKelvinLabel = DegreesSubviewLabel(title: "To convert Celcius to Kelvin write a number")
-    let celciusToKelvinUserTextField = UITextField()
-    let celciusToKelvinResultButton = DegreesButton(backgroundColor: .systemBlue, title: "Convert")
-    let celciusToKelvinconverterScoreLabel = CustomeSemiLabel(title: "result")
+    let celciusToKelvinUserTextField = ConfigureUserTextField()
+    let celciusToKelvinResultButton = DegreesButton(backgroundColor: .systemMint, title: "Convert")
+    let celciusToKelvinScoreLabel = CustomeSemiLabel(title: "result")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +20,16 @@ class CelciusToKelvinVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemMint
-        configureCelciusToKelvin()
+        view.backgroundColor = .systemGray2
+        configureCelciusToKelvinLabel()
         celciusToKelvinUserText()
         celciusToKelvinConverterButton()
         celciusToKelvinConfigureScoreLabel()
     }
     
-    func configureCelciusToKelvin(){
+    func configureCelciusToKelvinLabel(){
         view.addSubview(celciusToKelvinLabel)
         celciusToKelvinLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             celciusToKelvinLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             celciusToKelvinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -41,9 +40,7 @@ class CelciusToKelvinVC: UIViewController {
     func celciusToKelvinUserText() {
         view.addSubview(celciusToKelvinUserTextField)
         celciusToKelvinUserTextField.translatesAutoresizingMaskIntoConstraints = false
-        celciusToKelvinUserTextField.textAlignment = .center
-        celciusToKelvinUserTextField.becomeFirstResponder()
-        celciusToKelvinUserTextField.keyboardType = .numberPad
+
         NSLayoutConstraint.activate([
             celciusToKelvinUserTextField.topAnchor.constraint(equalTo: celciusToKelvinLabel.bottomAnchor, constant: 20),
             celciusToKelvinUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -64,11 +61,11 @@ class CelciusToKelvinVC: UIViewController {
     }
     
     func celciusToKelvinConfigureScoreLabel() {
-        view.addSubview(celciusToKelvinconverterScoreLabel)
-        celciusToKelvinconverterScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(celciusToKelvinScoreLabel)
+        celciusToKelvinScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            celciusToKelvinconverterScoreLabel.topAnchor.constraint(equalTo: celciusToKelvinResultButton.bottomAnchor, constant: 40),
-            celciusToKelvinconverterScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            celciusToKelvinScoreLabel.topAnchor.constraint(equalTo: celciusToKelvinResultButton.bottomAnchor, constant: 40),
+            celciusToKelvinScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     

@@ -10,8 +10,8 @@ import UIKit
 class CelciusToFarenthideVC: UIViewController {
     
     let celciusToFarenthideLabel = DegreesSubviewLabel(title: "To convert Celcius to Farenthide write a number")
-    let celciusToFarenthideUserTextField = UITextField()
-    let celciusToFarenthideResultButton = DegreesButton(backgroundColor: .systemBlue, title: "Convert")
+    let celciusToFarenthideUserTextField = ConfigureUserTextField()
+    let celciusToFarenthideResultButton = DegreesButton(backgroundColor: .systemMint, title: "Convert")
     let celciusToFarenthideConverterScoreLabel = CustomeSemiLabel(title: "result")
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class CelciusToFarenthideVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemBrown
+        view.backgroundColor = .systemGray2
         configureCelciusToFarenthideLabel()
         celciusToFarenthideConfigureUserText()
         celciusToFarenthideConfigureConverterButton()
@@ -41,9 +41,7 @@ class CelciusToFarenthideVC: UIViewController {
     func celciusToFarenthideConfigureUserText (){
         view.addSubview(celciusToFarenthideUserTextField)
         celciusToFarenthideUserTextField.translatesAutoresizingMaskIntoConstraints = false
-        celciusToFarenthideUserTextField.textAlignment = .center
-        celciusToFarenthideUserTextField.becomeFirstResponder()
-        celciusToFarenthideUserTextField.keyboardType = .numberPad
+        
         NSLayoutConstraint.activate([
             celciusToFarenthideUserTextField.topAnchor.constraint(equalTo: celciusToFarenthideLabel.bottomAnchor, constant: 20),
             celciusToFarenthideUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -55,6 +53,7 @@ class CelciusToFarenthideVC: UIViewController {
     func celciusToFarenthideConfigureConverterButton() {
         view.addSubview(celciusToFarenthideResultButton)
         celciusToFarenthideResultButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             celciusToFarenthideResultButton.topAnchor.constraint(equalTo: celciusToFarenthideUserTextField.bottomAnchor, constant: 40),
             celciusToFarenthideResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -71,5 +70,5 @@ class CelciusToFarenthideVC: UIViewController {
             celciusToFarenthideConverterScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-    
+  
 }

@@ -10,9 +10,9 @@ import UIKit
 class FarenthideToCelciusVC: UIViewController {
     
     let farenthideToCelciusLabel = DegreesSubviewLabel(title: "To convert Farenthide to Celcius write a number")
-    let userTextField = UITextField()
-    let resultButton = DegreesButton(backgroundColor: .systemBlue, title: "Convert")
-    let converterScoreLabel = CustomeSemiLabel(title: "result")
+    let farenthideToCelciususerTextField = ConfigureUserTextField()
+    let farenthideToCelciusResultButton = DegreesButton(backgroundColor: .systemMint, title: "Convert")
+    let farenthideToCelciusConverterScoreLabel = CustomeSemiLabel(title: "result")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class FarenthideToCelciusVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = .systemGray2
         configureFarenthideToCelcius()
         farenthideToCelciusUserText()
         farenthideToCelciusConverterButton()
@@ -39,37 +39,34 @@ class FarenthideToCelciusVC: UIViewController {
     }
     
     func farenthideToCelciusUserText (){
-        view.addSubview(userTextField)
-        userTextField.translatesAutoresizingMaskIntoConstraints = false
-        userTextField.textAlignment = .center
-        userTextField.becomeFirstResponder()
-        userTextField.keyboardType = .numberPad
+        view.addSubview(farenthideToCelciususerTextField)
+        farenthideToCelciususerTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            userTextField.topAnchor.constraint(equalTo: farenthideToCelciusLabel.bottomAnchor, constant: 20),
-            userTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            userTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            userTextField.heightAnchor.constraint(equalToConstant: 50)
+            farenthideToCelciususerTextField.topAnchor.constraint(equalTo: farenthideToCelciusLabel.bottomAnchor, constant: 20),
+            farenthideToCelciususerTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            farenthideToCelciususerTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            farenthideToCelciususerTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
     func farenthideToCelciusConverterButton() {
-        view.addSubview(resultButton)
-        resultButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(farenthideToCelciusResultButton)
+        farenthideToCelciusResultButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            resultButton.topAnchor.constraint(equalTo: userTextField.bottomAnchor, constant: 40),
-            resultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            resultButton.widthAnchor.constraint(equalToConstant: 120),
-            resultButton.heightAnchor.constraint(equalToConstant: 50)
+            farenthideToCelciusResultButton.topAnchor.constraint(equalTo: farenthideToCelciususerTextField.bottomAnchor, constant: 40),
+            farenthideToCelciusResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            farenthideToCelciusResultButton.widthAnchor.constraint(equalToConstant: 120),
+            farenthideToCelciusResultButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
     func farenthideToCelciusConfigureScoreLabel() {
-        view.addSubview(converterScoreLabel)
-        converterScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(farenthideToCelciusConverterScoreLabel)
+        farenthideToCelciusConverterScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            converterScoreLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor, constant: 40),
-            converterScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            farenthideToCelciusConverterScoreLabel.topAnchor.constraint(equalTo: farenthideToCelciusResultButton.bottomAnchor, constant: 40),
+            farenthideToCelciusConverterScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-    
 }
