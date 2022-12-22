@@ -65,10 +65,11 @@ class CelciusToFarenthideVC: UIViewController {
     func celciusToFarenthideConfigureScoreLabel() {
         view.addSubview(celciusToFarenthideConverterScoreLabel)
         celciusToFarenthideConverterScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             celciusToFarenthideConverterScoreLabel.topAnchor.constraint(equalTo: celciusToFarenthideResultButton.bottomAnchor, constant: 40),
             celciusToFarenthideConverterScoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-  
+    
 }

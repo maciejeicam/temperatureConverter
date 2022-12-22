@@ -30,6 +30,7 @@ class CelciusToKelvinVC: UIViewController {
     func configureCelciusToKelvinLabel(){
         view.addSubview(celciusToKelvinLabel)
         celciusToKelvinLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             celciusToKelvinLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             celciusToKelvinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -40,7 +41,7 @@ class CelciusToKelvinVC: UIViewController {
     func celciusToKelvinUserText() {
         view.addSubview(celciusToKelvinUserTextField)
         celciusToKelvinUserTextField.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             celciusToKelvinUserTextField.topAnchor.constraint(equalTo: celciusToKelvinLabel.bottomAnchor, constant: 20),
             celciusToKelvinUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -52,6 +53,7 @@ class CelciusToKelvinVC: UIViewController {
     func celciusToKelvinConverterButton() {
         view.addSubview(celciusToKelvinResultButton)
         celciusToKelvinResultButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             celciusToKelvinResultButton.topAnchor.constraint(equalTo: celciusToKelvinUserTextField.bottomAnchor, constant: 40),
             celciusToKelvinResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

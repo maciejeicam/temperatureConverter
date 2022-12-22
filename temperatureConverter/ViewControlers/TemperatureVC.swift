@@ -11,9 +11,9 @@ class TemperatureVC: UIViewController {
     
     let titleLabel = CustomeTitleLabel(title: "Temperature Converter")
     let semiLabel = CustomeSemiLabel(title: "What You want to convert?")
-    let celciusToFarenthideButton = DegreesButton(backgroundColor: .systemTeal, title: "ºC --> ºF")
-    let celciusToKelvinButton = DegreesButton(backgroundColor: .systemTeal, title: "ºC --> ºK")
-    let farenthideToCelciusButton = DegreesButton(backgroundColor: .systemTeal, title: "ºF --> ºC")
+    let celciusToFarenthideButton = DegreesButton(backgroundColor: .systemMint, title: "ºC --> ºF")
+    let celciusToKelvinButton = DegreesButton(backgroundColor: .systemMint, title: "ºC --> ºK")
+    let farenthideToCelciusButton = DegreesButton(backgroundColor: .systemMint, title: "ºF --> ºC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class TemperatureVC: UIViewController {
     }
     
     private func setupView(){
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray2
         configureTitleLabel()
         configureSemiLabel()
         configureCelciusToFarenthideButton()
