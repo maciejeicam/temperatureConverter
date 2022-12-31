@@ -7,17 +7,19 @@
 
 import UIKit
 
-class FarenthideToKelvinVC: UIViewController {
+class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
     
     let farenthideToKelvinLabel = DegreesSubviewLabel(title: "To convert Farenthide to Celcius or Celvin to Farenthide press correct button")
     let farenthideToKelvinToFarenthideuserTextField = ConfigureUserTextField()
     let farenthideToKelvinResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºF --> ºK")
     let kelvinToFarenthideResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºK --> ºF")
-    let farenthideToKelvinConverterScoreLabel = CustomeSemiLabel(title: "result")
+    let farenthideToKelvinConverterScoreLabel = CustomResultLabel()
+    var farenthideToKelvinToFarenthideText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        kelvinToFarenthideToKelvinConfigureButton()
     }
     
     private func setupView(){
@@ -27,12 +29,31 @@ class FarenthideToKelvinVC: UIViewController {
         farenthideToKelvinConverterButton()
         kelvinToFarenthideConverterButton()
         farenthideToKelvinToFarenthideConfigureScoreLabel()
+        farenthideToKelvinToFarenthideuserTextField.delegate = self
+        
+    }
+    
+    @objc func farenthideToKelvinConfigureButton(){
+        print(farenthideToKelvinToFarenthideText)
+        let kelvinToFarenthideSum = (((Float(farenthideToKelvinToFarenthideText)! + 459.67) * 5) / 9)
+        farenthideToKelvinConverterScoreLabel.text = "\(kelvinToFarenthideSum)"
+    }
+    
+    @objc func kelvinToFarenthideConfigureButton(){
+        print(farenthideToKelvinToFarenthideText)
+        let kelvinToFarenthideSum = (((Float(farenthideToKelvinToFarenthideText)! - 273.15) * 1.8) + 32)
+        farenthideToKelvinConverterScoreLabel.text = "\(kelvinToFarenthideSum)"
+    }
+    
+    func kelvinToFarenthideToKelvinConfigureButton() {
+        farenthideToKelvinResultButton.addTarget(self, action: #selector(farenthideToKelvinConfigureButton), for: .touchUpInside)
+        kelvinToFarenthideResultButton.addTarget(self, action: #selector(kelvinToFarenthideConfigureButton), for: .touchUpInside)
+        
     }
     
     func configureFarenthideToCelcius(){
         view.addSubview(farenthideToKelvinLabel)
         farenthideToKelvinLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             farenthideToKelvinLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             farenthideToKelvinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -40,10 +61,14 @@ class FarenthideToKelvinVC: UIViewController {
         ])
     }
     
+    @objc func textDidChange(sender: UITextField) {
+        farenthideToKelvinToFarenthideText = sender.text!
+    }
+    
     func farenthideToKelvinToFarenthideUserText (){
         view.addSubview(farenthideToKelvinToFarenthideuserTextField)
         farenthideToKelvinToFarenthideuserTextField.translatesAutoresizingMaskIntoConstraints = false
-        
+        farenthideToKelvinToFarenthideuserTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         NSLayoutConstraint.activate([
             farenthideToKelvinToFarenthideuserTextField.topAnchor.constraint(equalTo: farenthideToKelvinLabel.bottomAnchor, constant: 20),
             farenthideToKelvinToFarenthideuserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

@@ -7,17 +7,19 @@
 
 import UIKit
 
-class CelciusToKelvinVC: UIViewController {
+class CelciusToKelvinVC: UIViewController, UITextFieldDelegate {
     
     let celciusToKelvinToCelciusLabel = DegreesSubviewLabel(title: "To convert Celcius to Kelvin or Kelvin To Celcius press correct button")
     let celciusToKelvinToCelciusUserTextField = ConfigureUserTextField()
     let celciusToKelvinResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºC --> ºK")
     let kelvinToCelciusResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºK --> ºC")
-    let celciusToKelvinScoreLabel = CustomeSemiLabel(title: "result")
+    let celciusToKelvinScoreLabel = CustomResultLabel()
+    var celciusToKelvinToCelciustext = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        celciusToKelvinToCelciusButtonConfigure()
     }
     
     private func setupView(){
@@ -27,12 +29,29 @@ class CelciusToKelvinVC: UIViewController {
         celciusToKelvinConverterButton()
         kelvinToCelciusConverterButton()
         celciusToKelvinConfigureScoreLabel()
+        celciusToKelvinToCelciusUserTextField.delegate = self
+    }
+    
+    @objc func celciusToKelvinConfigureButton() {
+        print(celciusToKelvinToCelciustext)
+        let celciusToKelvinSum = (Float(celciusToKelvinToCelciustext)! + 273.15)
+        celciusToKelvinScoreLabel.text = "\(celciusToKelvinSum)"
+    }
+    
+    @objc func kelvinToCelciusConfigureButton() {
+        print(celciusToKelvinToCelciustext)
+        let kelvinToCelciusSum = (Float(celciusToKelvinToCelciustext)! - 273.15)
+        celciusToKelvinScoreLabel.text = "\(kelvinToCelciusSum)"
+    }
+    
+    func celciusToKelvinToCelciusButtonConfigure() {
+        celciusToKelvinResultButton.addTarget(self, action: #selector(celciusToKelvinConfigureButton), for: .touchUpInside)
+        kelvinToCelciusResultButton.addTarget(self, action: #selector(kelvinToCelciusConfigureButton), for: .touchUpInside)
     }
     
     func configureCelciusToKelvinLabel(){
         view.addSubview(celciusToKelvinToCelciusLabel)
         celciusToKelvinToCelciusLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             celciusToKelvinToCelciusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             celciusToKelvinToCelciusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -40,10 +59,14 @@ class CelciusToKelvinVC: UIViewController {
         ])
     }
     
+    @objc func textDidChange(sender: UITextField) {
+        celciusToKelvinToCelciustext = sender.text!
+    }
+    
     func celciusToKelvinUserText() {
         view.addSubview(celciusToKelvinToCelciusUserTextField)
         celciusToKelvinToCelciusUserTextField.translatesAutoresizingMaskIntoConstraints = false
-        
+        celciusToKelvinToCelciusUserTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         NSLayoutConstraint.activate([
             celciusToKelvinToCelciusUserTextField.topAnchor.constraint(equalTo: celciusToKelvinToCelciusLabel.bottomAnchor, constant: 20),
             celciusToKelvinToCelciusUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -55,7 +78,6 @@ class CelciusToKelvinVC: UIViewController {
     func celciusToKelvinConverterButton() {
         view.addSubview(celciusToKelvinResultButton)
         celciusToKelvinResultButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             celciusToKelvinResultButton.topAnchor.constraint(equalTo: celciusToKelvinToCelciusUserTextField.bottomAnchor, constant: 40),
             celciusToKelvinResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -67,7 +89,6 @@ class CelciusToKelvinVC: UIViewController {
     func kelvinToCelciusConverterButton() {
         view.addSubview(kelvinToCelciusResultButton)
         kelvinToCelciusResultButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             kelvinToCelciusResultButton.topAnchor.constraint(equalTo: celciusToKelvinResultButton.bottomAnchor, constant: 40),
             kelvinToCelciusResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

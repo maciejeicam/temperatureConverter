@@ -7,18 +7,19 @@
 
 import UIKit
 
-class CelciusToFarenthideVC: UIViewController {
+class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
     
     let celciusToFarenthideToCelciusLabel = DegreesSubviewLabel(title: "To convert Celcius to Farenthide or Farenthide to Celcius press correct button")
     let celciusToFarenthideUserTextField = ConfigureUserTextField()
-    let celciusToFarenthideResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºC --> ºF")
+    let celciusToFarenthideResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºC → ºF")
     let farenthideToCelciusResultButton = DegreesButton(backgroundColor: .systemMint, title: "ºF -->ºC")
-    let celciusToFarenthideConverterScoreLabel = CustomeSemiLabel(title: "___")
+    var celciusToFarenthideConverterScoreLabel = CustomResultLabel()
+    var celciusToFarenthideToCelciustext = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        buttonConfigure()
+        celciusToFarenthideConfigureConverterButton()
     }
     
     private func setupView(){
@@ -28,19 +29,24 @@ class CelciusToFarenthideVC: UIViewController {
         celciusToFarenthideConfigureConverterButton()
         farenthideToCelciusConfigureConverterButton()
         celciusToFarenthideConfigureScoreLabel()
+        celciusToFarenthideUserTextField.delegate = self
     }
     
     @objc func celciusToFarenthideConfigureButton() {
-        
-        
+        print(celciusToFarenthideToCelciustext)
+        let celciusToFarenthideSum = ((Float(celciusToFarenthideToCelciustext)! * 1.8 ) + 32)
+        celciusToFarenthideConverterScoreLabel.text = "\(celciusToFarenthideSum)"
     }
     
-    func buttonConfigure() {
+    @objc func farenthideToCelciusConfigureButton() {
+        print(celciusToFarenthideToCelciustext)
+        let farenthideToCelciusSum = (((Float(celciusToFarenthideToCelciustext)! - 32 ) * 5 ) / 9)
+        celciusToFarenthideConverterScoreLabel.text = "\(farenthideToCelciusSum)"
+    }
+    
+    func celciusToFarenthideToCelciusButtonConfigure() {
         celciusToFarenthideResultButton.addTarget(self, action: #selector(celciusToFarenthideConfigureButton), for: .touchUpInside)
-    }
-    
-    func celciusToFarenthideVC() {
-        
+        farenthideToCelciusResultButton.addTarget(self, action: #selector(farenthideToCelciusConfigureButton), for: .touchUpInside)
     }
     
     func configureCelciusToFarenthideLabel(){
@@ -54,10 +60,14 @@ class CelciusToFarenthideVC: UIViewController {
         ])
     }
     
+    @objc func textDidChange(sender: UITextField) {
+        celciusToFarenthideToCelciustext = sender.text!
+    }
+    
     func celciusToFarenthideConfigureUserText (){
         view.addSubview(celciusToFarenthideUserTextField)
         celciusToFarenthideUserTextField.translatesAutoresizingMaskIntoConstraints = false
-        
+        celciusToFarenthideUserTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         NSLayoutConstraint.activate([
             celciusToFarenthideUserTextField.topAnchor.constraint(equalTo: celciusToFarenthideToCelciusLabel.bottomAnchor, constant: 20),
             celciusToFarenthideUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
