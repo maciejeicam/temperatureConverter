@@ -19,9 +19,13 @@ class ConfigureUserTextField :UITextField{
     }
     
     func configureUserTextField() {
-        textAlignment = .center
+        textAlignment       = .center
+        font                = .systemFont(ofSize: 35, weight: .bold)
         becomeFirstResponder()
-        keyboardType = .numberPad
+        keyboardType        = .decimalPad
+        clearButtonMode     = .whileEditing
+        keyboardAppearance  = .dark
+        placeholder         = "Enter a temperature"
     }
     
 }
