@@ -27,4 +27,5 @@ class CustomeTitleLabel: UILabel{
         font = .systemFont(ofSize: 25, weight: .heavy)
         textAlignment = .center
     }
+    
 }

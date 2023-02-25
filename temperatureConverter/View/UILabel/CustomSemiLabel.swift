@@ -27,4 +27,5 @@ class CustomeSemiLabel: UILabel{
         font = .systemFont(ofSize: 20, weight: .semibold)
         textAlignment = .center
     }
+    
 }
