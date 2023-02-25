@@ -18,11 +18,10 @@ class DegreesButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroundColor: UIColor, title: String) {
-        super.init(frame: CGRect .zero)
+    convenience init(backgroundColor: UIColor, title: String) {
+        self.init(frame: CGRect .zero)
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)
-        configure()
     }
     
     func configure() {

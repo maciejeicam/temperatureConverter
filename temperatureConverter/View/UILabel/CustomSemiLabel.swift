@@ -17,10 +17,9 @@ class CustomeSemiLabel: UILabel{
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(title: String) {
-        super.init(frame: .zero)
+    convenience init(title: String) {
+        self.init(frame: .zero)
         text = title
-        configure()
     }
     
     private func configure(){

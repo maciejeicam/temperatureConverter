@@ -10,20 +10,19 @@ import UIKit
 class DegreesSubviewLabel: UILabel {
     override init(frame:CGRect){
         super.init(frame: .zero)
-        degreesConfigure()
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
     
-    init(title:String) {
-        super.init(frame: .zero)
+    convenience init(title:String) {
+        self.init(frame: .zero)
         text = title
-        degreesConfigure()
     }
     
-    private func degreesConfigure() {
+    private func configure() {
         font = .systemFont(ofSize: 25, weight: .semibold)
         textAlignment = .center
         lineBreakMode = .byWordWrapping

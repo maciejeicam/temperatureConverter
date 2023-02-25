@@ -16,6 +16,8 @@ class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
     let farenthideToKelvinConverterScoreLabel = CustomResultLabel()
     var farenthideToKelvinToFarenthideText = ""
     let padding: CGFloat = 20
+    let heightPadding: CGFloat = 50
+    let widathPadding: CGFloat = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,6 @@ class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
         kelvinToFarenthideConverterButton()
         farenthideToKelvinToFarenthideConfigureScoreLabel()
         farenthideToKelvinToFarenthideuserTextField.delegate = self
-        
     }
     
     @objc func farenthideToKelvinConfigureButton(){
@@ -74,7 +75,7 @@ class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
             farenthideToKelvinToFarenthideuserTextField.topAnchor.constraint(equalTo: farenthideToKelvinLabel.bottomAnchor, constant: padding),
             farenthideToKelvinToFarenthideuserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             farenthideToKelvinToFarenthideuserTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            farenthideToKelvinToFarenthideuserTextField.heightAnchor.constraint(equalToConstant: 50)
+            farenthideToKelvinToFarenthideuserTextField.heightAnchor.constraint(equalToConstant: heightPadding)
         ])
     }
     
@@ -84,8 +85,8 @@ class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             farenthideToKelvinResultButton.topAnchor.constraint(equalTo: farenthideToKelvinToFarenthideuserTextField.bottomAnchor, constant: 2 * padding),
             farenthideToKelvinResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            farenthideToKelvinResultButton.widthAnchor.constraint(equalToConstant: 120),
-            farenthideToKelvinResultButton.heightAnchor.constraint(equalToConstant: 50)
+            farenthideToKelvinResultButton.widthAnchor.constraint(equalToConstant: widathPadding),
+            farenthideToKelvinResultButton.heightAnchor.constraint(equalToConstant: heightPadding)
         ])
     }
     
@@ -95,8 +96,8 @@ class FarenthideToKelvinVC: UIViewController, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             kelvinToFarenthideResultButton.topAnchor.constraint(equalTo: farenthideToKelvinResultButton.bottomAnchor, constant: 2 * padding),
             kelvinToFarenthideResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            kelvinToFarenthideResultButton.widthAnchor.constraint(equalToConstant: 120),
-            kelvinToFarenthideResultButton.heightAnchor.constraint(equalToConstant: 50)
+            kelvinToFarenthideResultButton.widthAnchor.constraint(equalToConstant: widathPadding),
+            kelvinToFarenthideResultButton.heightAnchor.constraint(equalToConstant: heightPadding)
         ])
     }
     

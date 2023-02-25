@@ -18,8 +18,8 @@ class CustomResultLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(title: Int) {
-        super.init(frame: .zero)
+    convenience init(title: Int) {
+        self.init(frame: .zero)
     }
     
     private func configureResultLabel() {

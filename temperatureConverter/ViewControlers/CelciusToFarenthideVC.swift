@@ -16,6 +16,8 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
     var celciusToFarenthideConverterScoreLabel = CustomResultLabel()
     var celciusToFarenthideToCelciustext = ""
     let padding: CGFloat = 20
+    let heightpadding: CGFloat = 50
+    let widthPadding: CGFloat = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         celciusToFarenthideConfigureConverterButton()
         farenthideToCelciusConfigureConverterButton()
         celciusToFarenthideConfigureScoreLabel()
+        configureDoneButton()
         celciusToFarenthideUserTextField.delegate = self
     }
     
@@ -43,6 +46,11 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         let farenthideToCelciusSum = (((Float(celciusToFarenthideToCelciustext)! - 32 ) * 5 ) / 9)
         let roundedFarenthideToCelciusSum = round(farenthideToCelciusSum * 100) / 100.0
         celciusToFarenthideConverterScoreLabel.text = "\(roundedFarenthideToCelciusSum) ºC"
+    }
+    
+    func configureDoneButton() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+        navigationItem.rightBarButtonItem = doneButton
     }
     
     func celciusToFarenthideToCelciusButtonConfigure() {
@@ -61,6 +69,10 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         ])
     }
     
+    @objc func dismissVC() {
+        dismiss(animated: true)
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         celciusToFarenthideToCelciustext = sender.text!
     }
@@ -73,7 +85,7 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
             celciusToFarenthideUserTextField.topAnchor.constraint(equalTo: celciusToFarenthideToCelciusLabel.bottomAnchor, constant: padding),
             celciusToFarenthideUserTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             celciusToFarenthideUserTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            celciusToFarenthideUserTextField.heightAnchor.constraint(equalToConstant: 50)
+            celciusToFarenthideUserTextField.heightAnchor.constraint(equalToConstant: heightpadding)
         ])
     }
     
@@ -84,8 +96,8 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         NSLayoutConstraint.activate([
             celciusToFarenthideResultButton.topAnchor.constraint(equalTo: celciusToFarenthideUserTextField.bottomAnchor, constant: 2 * padding),
             celciusToFarenthideResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            celciusToFarenthideResultButton.widthAnchor.constraint(equalToConstant: 120),
-            celciusToFarenthideResultButton.heightAnchor.constraint(equalToConstant: 50)
+            celciusToFarenthideResultButton.widthAnchor.constraint(equalToConstant: widthPadding),
+            celciusToFarenthideResultButton.heightAnchor.constraint(equalToConstant: heightpadding)
         ])
     }
     
@@ -96,8 +108,8 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         NSLayoutConstraint.activate([
             farenthideToCelciusResultButton.topAnchor.constraint(equalTo: celciusToFarenthideResultButton.bottomAnchor, constant: 2 * padding),
             farenthideToCelciusResultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            farenthideToCelciusResultButton.widthAnchor.constraint(equalToConstant: 120),
-            farenthideToCelciusResultButton.heightAnchor.constraint(equalToConstant: 50)
+            farenthideToCelciusResultButton.widthAnchor.constraint(equalToConstant: widthPadding),
+            farenthideToCelciusResultButton.heightAnchor.constraint(equalToConstant: heightpadding)
         ])
     }
     
