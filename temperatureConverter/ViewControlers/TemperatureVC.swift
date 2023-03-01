@@ -18,7 +18,7 @@ class TemperatureVC: UIViewController {
     let heightPadding: CGFloat = 50
     let widthPadding: CGFloat = 120
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         setupView()
         addButtonTarget()

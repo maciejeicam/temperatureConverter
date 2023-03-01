@@ -32,7 +32,6 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         celciusToFarenthideConfigureConverterButton()
         farenthideToCelciusConfigureConverterButton()
         celciusToFarenthideConfigureScoreLabel()
-        configureDoneButton()
         celciusToFarenthideUserTextField.delegate = self
     }
     
@@ -47,12 +46,6 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
         let roundedFarenthideToCelciusSum = round(farenthideToCelciusSum * 100) / 100.0
         celciusToFarenthideConverterScoreLabel.text = "\(roundedFarenthideToCelciusSum) ºC"
     }
-    
-    func configureDoneButton() {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-        navigationItem.rightBarButtonItem = doneButton
-    }
-    
     func celciusToFarenthideToCelciusButtonConfigure() {
         celciusToFarenthideResultButton.addTarget(self, action: #selector(celciusToFarenthideConfigureButton), for: .touchUpInside)
         farenthideToCelciusResultButton.addTarget(self, action: #selector(farenthideToCelciusConfigureButton), for: .touchUpInside)
@@ -67,10 +60,6 @@ class CelciusToFarenthideVC: UIViewController,UITextFieldDelegate {
             celciusToFarenthideToCelciusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             celciusToFarenthideToCelciusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
         ])
-    }
-    
-    @objc func dismissVC() {
-        dismiss(animated: true)
     }
     
     @objc func textDidChange(sender: UITextField) {

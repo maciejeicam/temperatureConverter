@@ -7,26 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E2252F22294BCF6F002D4EAD /* CtoFVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F21294BCF6F002D4EAD /* CtoFVC.swift */; };
+		E2252F22294BCF6F002D4EAD /* CelciusToFarenthideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F21294BCF6F002D4EAD /* CelciusToFarenthideVC.swift */; };
 		E2252F24294C951D002D4EAD /* CustomTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F23294C951C002D4EAD /* CustomTitleLabel.swift */; };
 		E2252F26294C9674002D4EAD /* CustomSemiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F25294C9674002D4EAD /* CustomSemiLabel.swift */; };
-		E2252F2A294CA12E002D4EAD /* CtoKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F29294CA12E002D4EAD /* CtoKButton.swift */; };
-		E2252F2C294CA21B002D4EAD /* CtoFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F2B294CA21B002D4EAD /* CtoFButton.swift */; };
-		E2252F2E294CA3D5002D4EAD /* CtoKVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F2D294CA3D5002D4EAD /* CtoKVC.swift */; };
+		E2252F2C294CA21B002D4EAD /* DegreesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F2B294CA21B002D4EAD /* DegreesButton.swift */; };
+		E2252F2E294CA3D5002D4EAD /* CelciusToKelvinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F2D294CA3D5002D4EAD /* CelciusToKelvinVC.swift */; };
+		E2252F32294CACB7002D4EAD /* FarenthideToKelvinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2252F31294CACB7002D4EAD /* FarenthideToKelvinVC.swift */; };
 		E22A2861294BB91900EF4346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22A2860294BB91900EF4346 /* AppDelegate.swift */; };
 		E22A2863294BB91900EF4346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22A2862294BB91900EF4346 /* SceneDelegate.swift */; };
 		E22A286A294BB91C00EF4346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22A2869294BB91C00EF4346 /* Assets.xcassets */; };
 		E22A286D294BB91C00EF4346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22A286B294BB91C00EF4346 /* LaunchScreen.storyboard */; };
 		E22A2875294BB9EA00EF4346 /* TemperatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22A2874294BB9EA00EF4346 /* TemperatureVC.swift */; };
+		E267086B295AF9EC00C20BF4 /* CustomResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267086A295AF9EC00C20BF4 /* CustomResultLabel.swift */; };
+		E2EF68EC29508052001A90B5 /* DegreesSubviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF68EB29508052001A90B5 /* DegreesSubviewLabel.swift */; };
+		E2EF68F529531572001A90B5 /* configureUserTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF68F429531572001A90B5 /* configureUserTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E2252F21294BCF6F002D4EAD /* CtoFVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtoFVC.swift; sourceTree = "<group>"; };
+		E2252F21294BCF6F002D4EAD /* CelciusToFarenthideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelciusToFarenthideVC.swift; sourceTree = "<group>"; };
 		E2252F23294C951C002D4EAD /* CustomTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleLabel.swift; sourceTree = "<group>"; };
 		E2252F25294C9674002D4EAD /* CustomSemiLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSemiLabel.swift; sourceTree = "<group>"; };
-		E2252F29294CA12E002D4EAD /* CtoKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtoKButton.swift; sourceTree = "<group>"; };
-		E2252F2B294CA21B002D4EAD /* CtoFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtoFButton.swift; sourceTree = "<group>"; };
-		E2252F2D294CA3D5002D4EAD /* CtoKVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtoKVC.swift; sourceTree = "<group>"; };
+		E2252F2B294CA21B002D4EAD /* DegreesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreesButton.swift; sourceTree = "<group>"; };
+		E2252F2D294CA3D5002D4EAD /* CelciusToKelvinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelciusToKelvinVC.swift; sourceTree = "<group>"; };
+		E2252F31294CACB7002D4EAD /* FarenthideToKelvinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarenthideToKelvinVC.swift; sourceTree = "<group>"; };
 		E22A285D294BB91900EF4346 /* temperatureConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temperatureConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22A2860294BB91900EF4346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E22A2862294BB91900EF4346 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		E22A286C294BB91C00EF4346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E22A286E294BB91C00EF4346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E22A2874294BB9EA00EF4346 /* TemperatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVC.swift; sourceTree = "<group>"; };
+		E267086A295AF9EC00C20BF4 /* CustomResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultLabel.swift; sourceTree = "<group>"; };
+		E2EF68EB29508052001A90B5 /* DegreesSubviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreesSubviewLabel.swift; sourceTree = "<group>"; };
+		E2EF68F429531572001A90B5 /* configureUserTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configureUserTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,18 +74,61 @@
 			children = (
 				E22A2860294BB91900EF4346 /* AppDelegate.swift */,
 				E22A2862294BB91900EF4346 /* SceneDelegate.swift */,
-				E22A2874294BB9EA00EF4346 /* TemperatureVC.swift */,
-				E2252F25294C9674002D4EAD /* CustomSemiLabel.swift */,
-				E2252F23294C951C002D4EAD /* CustomTitleLabel.swift */,
-				E2252F2B294CA21B002D4EAD /* CtoFButton.swift */,
-				E2252F29294CA12E002D4EAD /* CtoKButton.swift */,
-				E2252F21294BCF6F002D4EAD /* CtoFVC.swift */,
-				E2252F2D294CA3D5002D4EAD /* CtoKVC.swift */,
+				E2EF68F029530600001A90B5 /* ViewControlers */,
+				E2EF68ED2953032D001A90B5 /* View */,
 				E22A2869294BB91C00EF4346 /* Assets.xcassets */,
 				E22A286B294BB91C00EF4346 /* LaunchScreen.storyboard */,
 				E22A286E294BB91C00EF4346 /* Info.plist */,
 			);
 			path = temperatureConverter;
+			sourceTree = "<group>";
+		};
+		E2EF68ED2953032D001A90B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF68F32953153F001A90B5 /* UITextField */,
+				E2EF68EF295303AF001A90B5 /* UIButton */,
+				E2EF68EE2953039A001A90B5 /* UILabel */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2EF68EE2953039A001A90B5 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				E2252F25294C9674002D4EAD /* CustomSemiLabel.swift */,
+				E2252F23294C951C002D4EAD /* CustomTitleLabel.swift */,
+				E2EF68EB29508052001A90B5 /* DegreesSubviewLabel.swift */,
+				E267086A295AF9EC00C20BF4 /* CustomResultLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		E2EF68EF295303AF001A90B5 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				E2252F2B294CA21B002D4EAD /* DegreesButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		E2EF68F029530600001A90B5 /* ViewControlers */ = {
+			isa = PBXGroup;
+			children = (
+				E22A2874294BB9EA00EF4346 /* TemperatureVC.swift */,
+				E2252F21294BCF6F002D4EAD /* CelciusToFarenthideVC.swift */,
+				E2252F2D294CA3D5002D4EAD /* CelciusToKelvinVC.swift */,
+				E2252F31294CACB7002D4EAD /* FarenthideToKelvinVC.swift */,
+			);
+			path = ViewControlers;
+			sourceTree = "<group>";
+		};
+		E2EF68F32953153F001A90B5 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF68F429531572001A90B5 /* configureUserTextField.swift */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,12 +202,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2252F24294C951D002D4EAD /* CustomTitleLabel.swift in Sources */,
-				E2252F2A294CA12E002D4EAD /* CtoKButton.swift in Sources */,
-				E2252F22294BCF6F002D4EAD /* CtoFVC.swift in Sources */,
-				E2252F2C294CA21B002D4EAD /* CtoFButton.swift in Sources */,
+				E2252F22294BCF6F002D4EAD /* CelciusToFarenthideVC.swift in Sources */,
+				E2EF68F529531572001A90B5 /* configureUserTextField.swift in Sources */,
+				E2EF68EC29508052001A90B5 /* DegreesSubviewLabel.swift in Sources */,
+				E2252F2C294CA21B002D4EAD /* DegreesButton.swift in Sources */,
+				E2252F32294CACB7002D4EAD /* FarenthideToKelvinVC.swift in Sources */,
 				E22A2875294BB9EA00EF4346 /* TemperatureVC.swift in Sources */,
-				E2252F2E294CA3D5002D4EAD /* CtoKVC.swift in Sources */,
+				E2252F2E294CA3D5002D4EAD /* CelciusToKelvinVC.swift in Sources */,
 				E22A2861294BB91900EF4346 /* AppDelegate.swift in Sources */,
+				E267086B295AF9EC00C20BF4 /* CustomResultLabel.swift in Sources */,
 				E2252F26294C9674002D4EAD /* CustomSemiLabel.swift in Sources */,
 				E22A2863294BB91900EF4346 /* SceneDelegate.swift in Sources */,
 			);
@@ -228,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -306,6 +358,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +366,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = temperatureConverter.temperatureConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -333,6 +389,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +397,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = temperatureConverter.temperatureConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
